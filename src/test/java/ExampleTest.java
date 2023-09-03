@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -14,8 +15,12 @@ import static org.junit.Assert.assertTrue;
 public class ExampleTest {
     @Test
     public void invalidAuthorization() {
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
         WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
+        WebDriver driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.get("https://sql-academy.org/ru/trainer?sort=byId");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
