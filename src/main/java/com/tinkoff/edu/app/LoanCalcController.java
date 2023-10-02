@@ -1,16 +1,20 @@
 package com.tinkoff.edu.app;
 
-import static com.tinkoff.edu.app.LoanCalcLogger.log;
-
 public class LoanCalcController {
+    private LoanCalcRepository repo;
+    private LoanCalcService loanCalcService; //Creator
+
+    public LoanCalcController(LoanCalcRepository repo) {
+        loanCalcService = new LoanCalcService(repo);
+    }
+
     /**
      * TODO Validates and logs request
      */
-    public static int createRequest(LoanRequest request) { //formal
+    public  int createRequest(LoanRequest request) { //formal
         int localVar;
         // param validation
         // log request
-        log(request);
-        return LoanCalcService.createRequest(request);
+        return loanCalcService.createRequest(request);
     }
 }
