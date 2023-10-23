@@ -9,7 +9,7 @@ public class LoanCalcService {
 //    private LoanCalcRepository repo = new StaticVariableLoanCalcRepository(); // Паттерн Creator
 //    private LoanCalcRepository repo = RepositoryFactory.create(); // [GoF]- книга "Gang of Four", в которой описывается паттерн Factory Method
 
-    private LoanCalcRepository repo;
+    private LoanCalcRepository repo; // Field DI; пример делегирования, без наследования используем нужный код
 
     /**
      * Constructor DI (dependency injection)

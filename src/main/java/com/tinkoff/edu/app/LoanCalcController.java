@@ -5,7 +5,7 @@ public class LoanCalcController {
     private LoanCalcService loanCalcService; //Creator
 
     public LoanCalcController(LoanCalcRepository repo) {
-        loanCalcService = new LoanCalcService(repo);
+        loanCalcService = new IPNotFriendlyService(repo);
     }
 
     /**

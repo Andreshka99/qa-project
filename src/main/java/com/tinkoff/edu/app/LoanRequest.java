@@ -18,6 +18,10 @@ public class LoanRequest {
         return months;
     }
 
+    public LoanType getType() {
+        return type;
+    }
+
     public int getAmount() {
         return amount;
     }
